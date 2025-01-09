@@ -80,23 +80,27 @@ export const Socials = [
 ];
 export const Projects = [
     {
-        title: "Modern Nextjs Website",
+        id: "1",
+        title: "I-key-ah!",
         text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.",
-        src: "/NextWebsite.png",
+        src: "/ikeyah.png",
     },
     {
-        title: "Space Themed Website",
+        id: "2",
+        title: "Extension Totally Chill",
         text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.",
-        src: "/SpaceWebsite.png",
+        src: "/Extension_totally_chill.png",
     },
     {
-        title: "Modern Nextjs Portfolio",
+        id: "3",
+        title: "Réseau social PHP",
         text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.",
-        src: "/WebPortfolio.png",
+        src: "/RS_PHP.png",
     },
     {
-        title: "Matrix themed Website",
+        id: "4",
+        title: "Dataviz Lieux de tournages",
         text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.",
-        src: "/Matrix.png",
+        src: "/Dataviz.png",
     },
 ];

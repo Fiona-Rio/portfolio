@@ -6,8 +6,8 @@ const page = () => {
     const [hoveredIndex, setHoveredIndex] = useState<number | null>(null); // Suivre l'élément survolé
 
     return (
-        <div id="Apropos" className="flex flex-col items-center justify-center gap-20">
-            <h1 className="font-semibold text-white text-5xl">
+        <div id="Apropos" className="flex flex-col items-center justify-center pt-20 gap-20">
+            <h1 className="font-semibold text-white text-7xl pb-20">
                 Compétences{" "}
                 <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-500 to-red-500"> & </span>
                 outils
