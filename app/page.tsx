@@ -103,10 +103,30 @@ export default function Home() {
 
             <div id="mesprojets" className="min-h-screen bg-black p-8">
                 <h2 className="text-6xl text-white font-semibold mb-12">Mes Projets</h2>
-                <AnimatePresence mode="wait">
-                    {!selectedId ? <List selectedId={selectedId} /> : <Item id={selectedId} />}
-                </AnimatePresence>
+                <List selectedId={selectedId} />
             </div>
+
+            {/* Modal de détail */}
+            <AnimatePresence>
+                {selectedId && (
+                    <motion.div
+                        key="modal"
+                        className="absolute inset-0 bg-black bg-opacity-20 z-50 flex items-center justify-center"
+                        initial={{ opacity: 0 }}
+                        animate={{ opacity: 1 }}
+                        exit={{ opacity: 0 }}
+                    >
+                        <motion.div
+                            className="p-4 max-w-3xl w-full"
+                            initial={{ scale: 0.9 }}
+                            animate={{ scale: 1 }}
+                            exit={{ scale: 0.9 }}
+                        >
+                            <Item id={selectedId} />
+                        </motion.div>
+                    </motion.div>
+                )}
+            </AnimatePresence>
 
             <footer className="fixed bottom-0">
                 <ScrollUpButton />

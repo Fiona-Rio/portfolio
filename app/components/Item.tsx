@@ -3,12 +3,14 @@ import React from "react";
 import { motion } from "framer-motion";
 import Link from "next/link";
 import { Projects } from "../../constants/index";
+import { useRouter } from "next/navigation";
 
 interface ItemProps {
     id: string;
 }
 
 export const Item: React.FC<ItemProps> = ({ id }) => {
+    const router = useRouter();
     const item = Projects.find((item) => item.id === id);
 
     if (!item) {
@@ -19,19 +21,15 @@ export const Item: React.FC<ItemProps> = ({ id }) => {
 
     return (
         <>
-            <motion.div
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                exit={{ opacity: 0 }}
-                transition={{ duration: 0.2, delay: 0.1 }}
-                className="overlay"
-            >
-                <Link href="/#mesprojets" className="absolute inset-0" />
-            </motion.div>
-
-            <div className="card-content-container open">
+            <div>
+                <button
+                    onClick={() => router.push("/#mesprojets")}
+                    className="absolute top-4 right-4 text-white bg-red-500 rounded-full px-4 py-2"
+                >
+                    ✕
+                </button>
                 <motion.div
-                    className="relative rounded-2xl bg-[#1c1c1e] overflow-hidden w-full max-w-[700px] mx-auto"
+                    className="relative rounded-2xl bg-black overflow-hidden w-full max-w-[700px] mx-auto"
                     layoutId={`card-container-${id}`}
                 >
                     <motion.div

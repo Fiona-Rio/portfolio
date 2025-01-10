@@ -18,7 +18,7 @@ const Card: React.FC<CardProps> = ({ id, title, nbpeople, src }) => {
         <li className="relative p-6 h-[460px] flex-[0_0_40%] max-w-[40%] md:flex-[0_0_50%] md:max-w-[50%] sm:flex-[1_0_100%] sm:max-w-full sm:px-0">
             <div className="card-content-container w-full h-full relative block pointer-events-none">
                 <motion.div
-                    className="relative rounded-2xl bg-[#1c1c1e] overflow-hidden w-full h-full pointer-events-auto"
+                    className="relative rounded-2xl bg-black overflow-hidden w-full h-full pointer-events-auto"
                     layoutId={`card-container-${id}`}
                 >
                     <motion.div
@@ -28,12 +28,12 @@ const Card: React.FC<CardProps> = ({ id, title, nbpeople, src }) => {
                         <img className="w-full h-full object-cover" src={src} alt={title} />
                     </motion.div>
                     <motion.div className="absolute top-4 left-4 max-w-[300px]" layoutId={`title-container-${id}`}>
-                        <span className="text-white text-sm uppercase">{nbpeople} personnes</span>
-                        <h2 className="text-white my-2">{title}</h2>
+                        <h2 className="text-black text-2xl font-bold my-2">{title}</h2>
+                        <span className="text-black text-l uppercase">{nbpeople} personnes</span>
                     </motion.div>
                 </motion.div>
             </div>
-            <Link href={`/projet/${id}`} className="absolute inset-0" />
+            <Link href={`/?id=${id}`} className="absolute inset-0" />
         </li>
     );
 };
