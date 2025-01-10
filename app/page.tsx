@@ -1,13 +1,19 @@
 "use client";
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
+import { useRouter, useSearchParams } from "next/navigation";
 import Apropos from "./a-propos/page";
-import Mesprojets from "./mes-projets/page";
 import ScrollLinked from "./scrollProgress";
 import ScrollUpButton from "./components/ScrollUpButton";
+import { List } from "./components/List";
+import { Item } from "./components/Item";
 
 export default function Home() {
+    const router = useRouter();
+    const searchParams = useSearchParams();
+    const selectedId = searchParams.get("id") || undefined;
+
     return (
         <main className="w-screen h-screen relative bg-black">
             <ScrollLinked />
@@ -91,8 +97,15 @@ export default function Home() {
             <div className="pb-72 pt-72 bg-black">
                 <Apropos />
             </div>
-            <div className="pt-40 bg-black">
+            {/* <div className="pt-40 bg-black">
                 <Mesprojets />
+            </div> */}
+
+            <div id="mesprojets" className="min-h-screen bg-black p-8">
+                <h2 className="text-6xl text-white font-semibold mb-12">Mes Projets</h2>
+                <AnimatePresence mode="wait">
+                    {!selectedId ? <List selectedId={selectedId} /> : <Item id={selectedId} />}
+                </AnimatePresence>
             </div>
 
             <footer className="fixed bottom-0">

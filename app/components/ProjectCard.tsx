@@ -1,5 +1,7 @@
 "use client";
 import React from "react";
+import * as motion from "motion/react-client";
+
 interface Props {
     image: string;
     title: string;
@@ -8,11 +10,12 @@ interface Props {
 
 const ProjectCard = ({ image, title }: Props) => {
     return (
-        <div className="relative w-[500px] h-[300px] rounded-md">
-            <div style={{ backgroundImage: `url(${image})` }} className="absolute w-full h-full rounded-lg p-6">
-                <div className="absolute bottom-6 text-black font-bold text-xl uppercase">{title}</div>
+        <motion.div whileHover={{}}>
+            <div className="relative flex justify-center items-center w-96 h-80 rounded-md">
+                <img src={image} className="absolute max-w-full max-h-full rounded-lg justify-center blur-sm"></img>
+                <div className="absolute text-black font-bold text-xl uppercase p-6">{title}</div>
             </div>
-        </div>
+        </motion.div>
     );
 };
 
