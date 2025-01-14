@@ -1,19 +1,13 @@
 "use client";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
-import { useRouter, useSearchParams } from "next/navigation";
 import Apropos from "./a-propos/page";
 import ScrollLinked from "./scrollProgress";
 import ScrollUpButton from "./components/ScrollUpButton";
 import { List } from "./components/List";
-import { Item } from "./components/Item";
 
 export default function Home() {
-    const router = useRouter();
-    const searchParams = useSearchParams();
-    const selectedId = searchParams.get("id") || undefined;
-
     return (
         <main className="w-screen h-screen relative bg-black">
             <ScrollLinked />
@@ -80,53 +74,14 @@ export default function Home() {
                 </div>
             </div>
 
-            <div className="absolute top-20 right-20 z-10">
-                <Image src="/logo-fiona.png" alt="logo fiona rio" height={400} width={400} className="top-40" />
-            </div>
-
-            <div className="absolute top-0 ">
-                <Image
-                    src="/wllp-portofolio.png"
-                    alt="background"
-                    width={2000}
-                    height={3000}
-                    className="w-full h-full scale-150"
-                />
-            </div>
-
             <div className="pb-72 pt-72 bg-black">
                 <Apropos />
             </div>
-            {/* <div className="pt-40 bg-black">
-                <Mesprojets />
-            </div> */}
 
             <div id="mesprojets" className="min-h-screen bg-black p-8">
                 <h2 className="text-6xl text-white font-semibold mb-12">Mes Projets</h2>
-                <List selectedId={selectedId} />
+                <List />
             </div>
-
-            {/* Modal de détail */}
-            <AnimatePresence>
-                {selectedId && (
-                    <motion.div
-                        key="modal"
-                        className="absolute inset-0 bg-black bg-opacity-20 z-50 flex items-center justify-center"
-                        initial={{ opacity: 0 }}
-                        animate={{ opacity: 1 }}
-                        exit={{ opacity: 0 }}
-                    >
-                        <motion.div
-                            className="p-4 max-w-3xl w-full"
-                            initial={{ scale: 0.9 }}
-                            animate={{ scale: 1 }}
-                            exit={{ scale: 0.9 }}
-                        >
-                            <Item id={selectedId} />
-                        </motion.div>
-                    </motion.div>
-                )}
-            </AnimatePresence>
 
             <footer className="fixed bottom-0">
                 <ScrollUpButton />
