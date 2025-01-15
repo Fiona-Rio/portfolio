@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
 import Apropos from "./a-propos/page";
-import ScrollLinked from "./scrollProgress";
+import ScrollLinked from "./components/scrollProgress";
 import ScrollUpButton from "./components/ScrollUpButton";
 import { List } from "./components/List";
 
@@ -11,9 +11,12 @@ export default function Home() {
     return (
         <main className="w-screen h-screen relative bg-black">
             <ScrollLinked />
+            <div className="absolute top-20 right-20 z-10">
+                <Image src="/logo-fiona.png" alt="logo fiona rio" height={400} width={400} className="top-40" />
+            </div>
             <div
                 className="flex items-center w-full h-full bg-cover bg-center"
-                style={{ backgroundImage: "/wllp-portofolio.png" }}
+                style={{ backgroundImage: `url('/wllp-portofolio.png')` }}
             >
                 <div id="#title" className="pl-20 md:pl-40 pb-56 md:pb-20 flex flex-col gap-5 z-10 max-w-[1000px]">
                     <h1 className="text-8xl text-white font-semibold">
@@ -78,8 +81,8 @@ export default function Home() {
                 <Apropos />
             </div>
 
-            <div id="mesprojets" className="min-h-screen bg-black p-8">
-                <h2 className="text-6xl text-white font-semibold mb-12">Mes Projets</h2>
+            <div id="mesprojets" className="bg-black p-8">
+                <h2 className="flex justify-center text-6xl text-white font-semibold mb-12">Mes Projets</h2>
                 <List />
             </div>
 
