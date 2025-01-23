@@ -1,6 +1,7 @@
 import React from "react";
 import * as motion from "motion/react-client";
 import Link from "next/link";
+import { FaChevronCircleUp } from "react-icons/fa";
 
 export default function EnterAnimation() {
     return (
@@ -10,20 +11,14 @@ export default function EnterAnimation() {
             transition={{
                 scale: { type: "spring", visualDuration: 0.4, bounce: 0.5 },
             }}
-            style={ball}
-            whileHover={{ scale: [null, 1.1] }}
+            whileHover={{ scale: 1.04 }}
+            className="ml-6 mb-4"
         >
             <Link href="#title">
-                <div className="text-center items-center pt-3">UP</div>
+                <div className="cursor-pointer">
+                    <FaChevronCircleUp size={40} color="white" />
+                </div>
             </Link>
         </motion.div>
     );
 }
-
-const ball = {
-    margin: 30,
-    width: 50,
-    height: 50,
-    backgroundColor: "#dd00ee",
-    borderRadius: "50%",
-};
