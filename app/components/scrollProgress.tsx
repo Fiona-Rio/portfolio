@@ -20,9 +20,8 @@ export default function ScrollLinked() {
                 right: 0,
                 height: 10,
                 originX: 0.5,
-                backgroundColor: "#ff0088",
             }}
-            className="z-20"
+            className="z-20 bg-fuchsia-600"
         />
     );
 }

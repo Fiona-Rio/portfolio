@@ -37,7 +37,7 @@ const Card: React.FC<CardProps> = ({ id, title, src, objectives, onClick }) => {
                     layoutId={`card-image-${id}`} // Identifiant pour animer cette image
                 />
                 {/* Details de la carte */}
-                <motion.div layoutId={`card-title-${id}`} className="text-neutral-800 absolute top-4 left-4">
+                <motion.div layoutId={`card-title-${id}`} className="text-neutral-800 absolute top-10 left-10">
                     <h2 className="text-4xl font-bold">{title}</h2>
                 </motion.div>
             </motion.div>
@@ -70,7 +70,7 @@ export const List: React.FC = () => {
                         onClick={() => setSelectedId(null)} // en cliquand sur le fond noir cela ferme la carte car aucun id est selectioné
                     >
                         <motion.div
-                            className=" text-neutral-300 bg-neutral-800 backdrop-blur bg-opacity-75 rounded-b-2xl lg:relative lg:w-1/2 md:w-3/4 w-3/4 h-8/9 rounded-xl"
+                            className=" text-neutral-300 bg-zinc-800 backdrop-blur bg-opacity-75 rounded-b-2xl lg:relative lg:w-1/2 md:w-3/4 w-3/4 h-8/9 rounded-xl"
                             layoutId={`card-container-${selectedId}`} // Identifiant unique pour animer la transition
                             onClick={(event) => event.stopPropagation()} // Empêche la propagation de l'event onClick du parent (donc bloque le OnClick plus haut)
                         >
