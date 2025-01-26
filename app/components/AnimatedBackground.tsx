@@ -1,8 +1,8 @@
-import React from "react";
-import { useEffect } from "react";
+import React, { useEffect, useRef } from "react";
 
 const AnimatedBackground: React.FC<{ children: React.ReactNode }> = ({ children }) => {
-    const canvasRef = React.useRef<HTMLCanvasElement | null>(null);
+    const canvasRef = useRef<HTMLCanvasElement | null>(null);
+    const mousePositionRef = useRef<{ x: number; y: number }>({ x: window.innerWidth / 2, y: window.innerHeight / 2 });
 
     useEffect(() => {
         const canvas = canvasRef.current;
@@ -10,16 +10,23 @@ const AnimatedBackground: React.FC<{ children: React.ReactNode }> = ({ children 
 
         if (!canvas || !ctx) return;
 
-        const handleMouseMove = (e: MouseEvent) => {
-            const { clientX, clientY } = e;
-            const width = canvas.width;
-            const height = canvas.height;
+        const drawGradient = () => {
+            // Use innerWidth and innerHeight for precise sizing
+            const width = window.innerWidth;
+            const height = window.innerHeight;
 
-            // Nettoyer le canvas
-            ctx.clearRect(0, 0, width, height);
+            canvas.width = width;
+            canvas.height = height;
 
-            // Dessiner un gradient radial
-            const gradient = ctx.createRadialGradient(clientX, clientY, 0, clientX, clientY, 1500);
+            const gradient = ctx.createRadialGradient(
+                mousePositionRef.current.x,
+                mousePositionRef.current.y,
+                0,
+                mousePositionRef.current.x,
+                mousePositionRef.current.y,
+                Math.min(width, height)
+            );
+
             gradient.addColorStop(0, "#e8aea6");
             gradient.addColorStop(0.2, "#e382be");
             gradient.addColorStop(0.3, "#df72b1");
@@ -29,20 +36,30 @@ const AnimatedBackground: React.FC<{ children: React.ReactNode }> = ({ children 
             ctx.fillRect(0, 0, width, height);
         };
 
+        drawGradient();
+
+        const handleMouseMove = (e: MouseEvent) => {
+            mousePositionRef.current = { x: e.clientX, y: e.clientY };
+            drawGradient();
+        };
+
+        const handleResize = () => {
+            drawGradient();
+        };
+
         window.addEventListener("mousemove", handleMouseMove);
+        window.addEventListener("resize", handleResize);
+
         return () => {
             window.removeEventListener("mousemove", handleMouseMove);
+            window.removeEventListener("resize", handleResize);
         };
     }, []);
 
     return (
         <>
-            <canvas
-                ref={canvasRef}
-                className="fixed inset-0 z-[-1] blur-3xl"
-                width={window.innerWidth}
-                height={window.innerHeight}
-            />
+            <canvas ref={canvasRef} className="fixed inset-0 -z-1" />
+
             {children}
         </>
     );
