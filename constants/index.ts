@@ -10,22 +10,22 @@ export const SkillData = [
         id: 2,
         name: "Css",
         Image: "/css.png",
-        width: 80,
-        height: 80,
+        width: 65,
+        height: 65,
     },
     {
         id: 3,
         name: "JavaScript",
         Image: "/js.png",
-        width: 50,
-        height: 50,
+        width: 65,
+        height: 65,
     },
     {
         id: 4,
         name: "Tailwind Css",
         Image: "/tailwind.png",
-        width: 90,
-        height: 90,
+        width: 65,
+        height: 65,
     },
     {
         id: 5,
@@ -55,22 +55,36 @@ export const SkillData = [
         width: 65,
         height: 65,
     },
+    {
+        id: 9,
+        name: "Git",
+        Image: "/Git.png",
+        width: 65,
+        height: 65,
+    },
+    {
+        id: 10,
+        name: "Github",
+        Image: "/Github.png",
+        width: 65,
+        height: 65,
+    },
+    {
+        id: 11,
+        name: "Java",
+        Image: "/Java.png",
+        width: 65,
+        height: 65,
+    },
+    {
+        id: 12,
+        name: "Springboot",
+        Image: "/Springboot.png",
+        width: 65,
+        height: 65,
+    },
 ];
 
-export const Socials = [
-    {
-        name: "Discord",
-        src: "/discord.svg",
-    },
-    {
-        name: "Facebook",
-        src: "/facebook.svg",
-    },
-    {
-        name: "Instagram",
-        src: "/instagram.svg",
-    },
-];
 export const Projects = [
     {
         id: "1",
