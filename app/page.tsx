@@ -74,7 +74,7 @@ export default function Home() {
                 </div>
 
                 {/* Section LogoWall */}
-                <div id="Outils" className="lg:pb-72 lg:pt-72">
+                <div id="Outils" className="lg:pb-72 lg:mt-64 lg:pt-40">
                     <h2 className="flex justify-center text-5xl lg:text-7xl text-zinc-700 font-semibold mb-40 px-10">
                         Mes langages et outils
                     </h2>

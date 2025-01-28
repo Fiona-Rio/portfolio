@@ -115,7 +115,7 @@ function LogoWall({
                                 width: `${item.width}px`,
                                 height: `${item.height}px`,
                             }}
-                            className="bg-[var(--color-bg-accent)] rounded-md object-contain aspect-video p-[calc(var(--size)/10)]"
+                            className="bg-[var(--color-bg-accent)] rounded-md object-contain aspect-video p-[calc(var(--size)/10)] m-[calc(var(--size)/10)]"
                         />
                     ))}
                 </div>
@@ -137,7 +137,7 @@ function LogoWall({
                                 width: `${item.width}px`,
                                 height: `${item.height}px`,
                             }}
-                            className="bg-[var(--color-bg-accent)] rounded-md object-contain aspect-video p-[calc(var(--size)/10)]"
+                            className="bg-[var(--color-bg-accent)] rounded-md object-contain aspect-video p-[calc(var(--size)/10)] m-[calc(var(--size)/10)]"
                         />
                     ))}
                 </div>
