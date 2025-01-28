@@ -3,6 +3,7 @@ import { motion, AnimatePresence } from "framer-motion"; // Framer Motion pour l
 import { Projects } from "../../constants/index"; // Import des données (projects)
 import { FaPeopleGroup } from "react-icons/fa6";
 import { BsCalendarWeekFill } from "react-icons/bs";
+import SpotlightCard from "./SpotlightCard";
 
 interface CardProps {
     id: string;

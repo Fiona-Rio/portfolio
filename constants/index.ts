@@ -108,7 +108,7 @@ export const Projects = [
     },
     {
         id: "3",
-        title: "Réseau social",
+        title: "Reseau social",
         text: "Nous sommes parties avec une base de code déjà fournie pour le projet. nous avons fait beaucoup de code review et de facoring pour le commencement du projet. Notre réseau social nous permet de : Se connecter à son compte. Aller sur le mur d'une autre personne.Poster un message sur le mur de cette personne. Se déconnecter.",
         objectives:
             "Nos objectifs : Utiliser un serveur (avec wamp) pour la premère fois. Apprendre à faire des requêtes SQL avec MySQL. Gérer une base de données avec PHP MyAdmin. Faire un travail de refactorisation. Gérer des session PHP.",
