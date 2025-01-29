@@ -5,7 +5,7 @@ import SpotlightCard from "./SpotlightCard";
 import { FaPeopleGroup } from "react-icons/fa6";
 import { BsCalendarWeekFill } from "react-icons/bs";
 
-interface CardProps {
+interface Project {
     id: string;
     title: string;
     nbpeople: string;
@@ -15,54 +15,74 @@ interface CardProps {
     text: string;
 }
 
-const Card: React.FC<CardProps> = ({ id, title, src, objectives, time, text, nbpeople }) => {
+//CARTE UNE FOIS OUVERTE
+
+const ProjectModal: React.FC<{
+    project: Project;
+    onClose: () => void;
+}> = ({ project, onClose }) => {
+    const { id, title, src, time, nbpeople, text, objectives } = project;
+
     return (
-        <SpotlightCard
-            className="custom-spotlight-card"
-            spotlightColor="rgba(180, 81, 225, 0.6)"
-            id={id}
-            title={title}
-            image={src}
-            modalContent={
-                <div>
+        <motion.div
+            className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            onClick={onClose}
+        >
+            <motion.div
+                className="text-fuchsia-200 bg-fuchsia-950 backdrop-blur bg-opacity-75 rounded-2xl lg:relative lg:w-1/2 md:w-3/4 w-3/4 lg:h-5/6"
+                layoutId={`card-container-${id}`}
+                onClick={(e) => e.stopPropagation()}
+            >
+                <motion.div layoutId={`card-image-${id}`} className="relative h-72 rounded-t-2xl overflow-hidden">
+                    <motion.img src={src} alt={title} className="w-full h-full object-cover" />
+                </motion.div>
+                <div className="lg:p-6 md:p-6 p-3">
+                    <motion.h2 layoutId={`card-title-${id}`} className="font-bold lg:text-3xl md:text-3xl text-xl mb-4">
+                        {title}
+                    </motion.h2>
                     <h1 className="flex gap-1.5 items-center font-bold mb-2">
                         {time} <BsCalendarWeekFill />
                         {" | "}
                         {nbpeople} <FaPeopleGroup />
                     </h1>
-                    <p className="text-sm mb-2">{text}</p>
-                    <p className="text-sm">{objectives}</p>
+                    <p className="text-lg mb-2">{text}</p>
+                    <p className="text-md">{objectives}</p>
                 </div>
-            }
-        >
-            <motion.div
-                layoutId={`card-container-${id}`}
-                className="relative h-96 rounded-2xl bg-black overflow-hidden"
-                whileHover={{ scale: 1.01 }}
-                transition={{ type: "spring", stiffness: 300 }}
-            >
-                <motion.img
-                    className="w-full h-full object-cover"
-                    src={src}
-                    alt={title}
-                    layoutId={`card-image-${id}`}
-                />
-                <motion.div layoutId={`card-title-${id}`} className="absolute top-5 left-5">
-                    <h2 className="text-2xl font-bold text-white">{title}</h2>
-                </motion.div>
             </motion.div>
-        </SpotlightCard>
+        </motion.div>
     );
 };
 
+//LISTE DES CARTES avec spotlighcard
+
 export const List: React.FC = () => {
+    const [selectedProject, setSelectedProject] = useState<string | null>(null);
+
+    const getSelectedProject = () => (selectedProject ? Projects.find((p) => p.id === selectedProject) : null);
+
     return (
         <div className="flex flex-wrap justify-center">
             <ul className="grid lg:grid-cols-2 gap-8 grid-cols-1 max-w-6xl px-4">
                 {Projects.map((project) => (
-                    <Card key={project.id} {...project} />
+                    <li key={project.id}>
+                        <SpotlightCard
+                            id={project.id}
+                            title={project.title}
+                            image={project.src}
+                            onClick={() => setSelectedProject(project.id)}
+                        />
+                    </li>
                 ))}
             </ul>
+
+            <AnimatePresence>
+                {selectedProject && getSelectedProject() && (
+                    <ProjectModal project={getSelectedProject()!} onClose={() => setSelectedProject(null)} />
+                )}
+            </AnimatePresence>
         </div>
     );
 };

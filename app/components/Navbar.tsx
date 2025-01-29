@@ -6,7 +6,7 @@ import { BsFileEarmarkPdfFill } from "react-icons/bs";
 const Navbar = () => {
     return (
         <nav className="fixed left-0 h-full flex items-center">
-            <ul className="flex items-center space-y-10 p-4" style={{ writingMode: "vertical-rl" }}>
+            <ul className="flex items-center space-y-10 p-4 text-zinc-800" style={{ writingMode: "vertical-rl" }}>
                 <li>
                     <a href="https://www.linkedin.com/in/fiona-rio-932459144/" className="flex items-center">
                         <FaLinkedin />
