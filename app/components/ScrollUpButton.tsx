@@ -16,10 +16,10 @@ export default function EnterAnimation() {
                 scale: { type: "spring", visualDuration: 0.4, bounce: 0.5 },
             }}
             whileHover={{ scale: 1.04 }}
-            className="ml-6 mb-6"
+            className="pr-8 pb-6"
         >
             <div onClick={scrollToTop} className="cursor-pointer">
-                <FaChevronCircleUp size={40} color="white" />
+                <FaChevronCircleUp size={38} />
             </div>
         </motion.div>
     );

@@ -35,7 +35,7 @@ const SpotlightCard: React.FC<SpotlightCardProps> = ({
             onMouseLeave={() => setOpacity(0)}
             onClick={onClick}
             // whileHover={{ scale: 1 }}
-            className="relative h-96 rounded-2xl bg-fuchsia-900 overflow-hidden cursor-pointer"
+            className="relative h-auto w-auto rounded-2xl bg-fuchsia-900 overflow-hidden cursor-pointer"
         >
             {/* Image en premier avec z-index supérieur */}
             <motion.img
@@ -45,7 +45,7 @@ const SpotlightCard: React.FC<SpotlightCardProps> = ({
                 alt={title}
             />
             <motion.div layoutId={`card-title-${id}`} className="px-6 py-4 relative z-10">
-                <h2 className="text-2xl font-bold text-fuchsia-200">{title}</h2>
+                <h2 className="text-3xl font-bold text-fuchsia-200">{title}</h2>
             </motion.div>
             {/* Effet spotlight en dernier avec z-index inférieur */}
             <motion.div

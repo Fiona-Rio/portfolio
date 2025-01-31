@@ -36,20 +36,22 @@ const ProjectModal: React.FC<{
                 layoutId={`card-container-${id}`}
                 onClick={(e) => e.stopPropagation()}
             >
-                <motion.div layoutId={`card-image-${id}`} className="relative h-72 rounded-t-2xl overflow-hidden">
+                <motion.div layoutId={`card-image-${id}`} className="relative h-[450px] rounded-t-2xl overflow-hidden">
                     <motion.img src={src} alt={title} className="w-full h-full object-cover" />
                 </motion.div>
                 <div className="lg:p-6 md:p-6 p-3">
-                    <motion.h2 layoutId={`card-title-${id}`} className="font-bold lg:text-3xl md:text-3xl text-xl mb-4">
+                    <motion.h2 layoutId={`card-title-${id}`} className="font-bold lg:text-4xl md:text-3xl text-xl mb-4">
                         {title}
                     </motion.h2>
-                    <h1 className="flex gap-1.5 items-center font-bold mb-2">
+                    <h1 className="flex gap-1.5 text-3xl items-center font-bold mb-2">
                         {time} <BsCalendarWeekFill />
                         {" | "}
                         {nbpeople} <FaPeopleGroup />
                     </h1>
-                    <p className="text-lg mb-2">{text}</p>
-                    <p className="text-md">{objectives}</p>
+                    <p className="text-2xl mb-2">{text}</p>
+                    <p className="text-xl">
+                        <strong>Objectifs :</strong> {objectives}
+                    </p>
                 </div>
             </motion.div>
         </motion.div>

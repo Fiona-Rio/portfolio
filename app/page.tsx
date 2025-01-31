@@ -21,21 +21,26 @@ export default function Home() {
                 <header>
                     <Navbar />
                 </header>
-                <div className="grid lg:grid-cols-2 grid-cols-1 place-items-center">
+                <div className="grid lg:grid-cols-2 grid-cols-1 place-items-center h-screen">
                     <div className="flex text-zinc-700">
                         <div
                             id="title"
-                            className="pt-20 px-5 md:pl-40 lg:pt-52 lg:pl-56 lg:pb-32 pb-14 flex flex-col gap-7"
+                            className="lg:px-5 lg:pt-32 lg:pl-56 lg:pb-32 md:pl-40 pt-20 pb-2 px-14 flex flex-col gap-7"
                         >
-                            <h1 className="lg:text-9xl md:text-7xl text-5xl font-bold">Fiona RIO</h1>
-                            <h1 className="lg:text-6xl md:text-7xl text-4xl font-bold">Developpeuse web</h1>
-                            <p>
-                                Bonjour ! Je suis une apprenante de Ada Tech School en formation jusqu'en février 2025
-                                où je commencerai une alternance d'un an en developpement web. (I hope)
+                            <h1 className="lg:text-9xl md:text-7xl lg:text-start text-5xl font-bold text-center">
+                                Fiona RIO
+                            </h1>
+                            <h1 className="lg:text-6xl lg:text-start md:text-7xl text-4xl font-bold text-center">
+                                Developpeuse web
+                            </h1>
+                            <p className="lg:text-3xl lg:text-start text-md text-center">
+                                Bienvenue ! Je viens de terminer une formation de developpeuse web de 8 mois a Ada Tech
+                                School et je recherche activement une alternance d'un an a partir de mars 2025 sur
+                                Nantes de preference ou en remote sur toute la France ! 👾
                             </p>
-                            <div className="flex-col md:flex-row md:flex lg:gap-5 lg:mt-2">
+                            <div className="flex flex-row justify-center lg:justify-start items-center gap-5 md:flex-row md:flex lg:mt-2">
                                 <motion.button
-                                    whileHover={{ scale: 1.1 }}
+                                    whileHover={{ scale: 1.06 }}
                                     transition={{
                                         scale: { type: "spring", visualDuration: 0.5, bounce: 0.7 },
                                     }}
@@ -46,7 +51,7 @@ export default function Home() {
                                     Mes outils
                                 </motion.button>
                                 <motion.button
-                                    whileHover={{ scale: 1.1 }}
+                                    whileHover={{ scale: 1.06 }}
                                     transition={{
                                         scale: { type: "spring", visualDuration: 0.5, bounce: 0.7 },
                                     }}
@@ -56,37 +61,25 @@ export default function Home() {
                                 >
                                     Mes projets
                                 </motion.button>
-                                <motion.button
-                                    whileHover={{ scale: 1.1 }}
-                                    transition={{
-                                        scale: { type: "spring", visualDuration: 0.5, bounce: 0.7 },
-                                    }}
-                                    whileTap={{ scale: 0.95 }}
-                                    onClick={() => scrollToSection("Apropos")}
-                                    className="ml-1 rounded-3xl group relative bg-transparent hover:bg-white hover:bg-opacity-10 lg:px-5 lg:py-3 px-5 py-2 border border-zinc-700 text-sm md:text-lg lg:text-lg text-zinc-700"
-                                >
-                                    Me contacter
-                                </motion.button>
                             </div>
                         </div>
                     </div>
                     <img src="./Room.png" className="h-[300px] w-[300px] lg:h-[600px] lg:w-[600px]" />
                 </div>
 
-                {/* Section LogoWall */}
-                <div id="Outils" className="lg:pb-72 lg:mt-64 lg:pt-40">
-                    <h2 className="flex justify-center text-5xl lg:text-7xl text-zinc-700 font-semibold mb-40 px-10">
+                <div id="Outils" className="lg:pb-72 lg:mt-64 lg:pt-40 mt-40">
+                    <h2 className="flex justify-center text-center text-5xl lg:text-7xl text-zinc-700 font-semibold mb-40 px-10">
                         Mes langages et outils
                     </h2>
-                    <div>
+                    <div style={{ height: "600px", width: "100%", position: "relative" }}>
                         <LogoWall
                             items={SkillData}
                             direction="horizontal"
                             pauseOnHover={true}
-                            size="clamp(8rem, 1rem + 20vmin, 25rem)"
-                            duration="30s"
+                            size="clamp(8rem, 1rem + 20vmin, 20rem)"
+                            duration="40s"
                             bgColor="transparent"
-                            bgAccentColor="#b451e1"
+                            bgAccentColor="#b048e0"
                         />
                     </div>
                 </div>
@@ -98,7 +91,7 @@ export default function Home() {
                     <List />
                 </div>
 
-                <footer className="fixed bottom-0">
+                <footer className="fixed bottom-0 right-0 z-20">
                     <ScrollUpButton />
                 </footer>
             </main>
