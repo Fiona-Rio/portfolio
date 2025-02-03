@@ -1,8 +1,12 @@
+"use client";
 import React, { useEffect, useRef } from "react";
 
 const AnimatedBackground: React.FC<{ children: React.ReactNode }> = ({ children }) => {
     const canvasRef = useRef<HTMLCanvasElement | null>(null);
-    const mousePositionRef = useRef<{ x: number; y: number }>({ x: window.innerWidth / 2, y: window.innerHeight / 2 });
+    const mousePositionRef = useRef<{ x: number; y: number }>({
+        x: typeof window !== "undefined" ? window.innerWidth / 2 : 0,
+        y: typeof window !== "undefined" ? window.innerHeight / 2 : 0,
+    });
 
     useEffect(() => {
         const canvas = canvasRef.current;
@@ -11,7 +15,6 @@ const AnimatedBackground: React.FC<{ children: React.ReactNode }> = ({ children 
         if (!canvas || !ctx) return;
 
         const drawGradient = () => {
-            // Use innerWidth and innerHeight for precise sizing
             const width = window.innerWidth;
             const height = window.innerHeight;
 

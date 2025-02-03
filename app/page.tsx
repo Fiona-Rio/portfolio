@@ -35,7 +35,7 @@ export default function Home() {
                             </h1>
                             <p className="lg:text-3xl lg:text-start text-md text-center">
                                 Bienvenue ! Je viens de terminer une formation de developpeuse web de 8 mois a Ada Tech
-                                School et je recherche activement une alternance d'un an a partir de mars 2025 sur
+                                School et je recherche activement une alternance d&apos;un an a partir de mars 2025 sur
                                 Nantes de preference ou en remote sur toute la France ! 👾
                             </p>
                             <div className="flex flex-row justify-center lg:justify-start items-center gap-5 md:flex-row md:flex lg:mt-2">
