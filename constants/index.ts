@@ -95,6 +95,7 @@ export const Projects = [
         nbpeople: "6",
         time: "7",
         language: "Java, Srping Boot, Angular, Typescript",
+        github: "https://github.com/Fiona-Rio/i-key-ah",
         src: "/ikeyah.png",
     },
     {
@@ -106,6 +107,7 @@ export const Projects = [
         nbpeople: "3",
         time: "7",
         language: "PHP, CSS",
+        github: "https://github.com/Fiona-Rio/Reseau-social-PHP",
         src: "/RS_PHP.png",
     },
     {
@@ -117,17 +119,19 @@ export const Projects = [
         nbpeople: "3",
         time: "7",
         language: "HTML, SCSS, JS",
+        github: "https://github.com/Fiona-Rio/Extension_chrome",
         src: "/Extension_totally_chill.png",
     },
     {
         id: "4",
-        title: "Lieux de tournages à Paris",
+        title: "Lieux de tournages a Paris",
         text: "Un site avec une carte interactive sur laquelle sont placés des marqueurs représentant les lieux de tournage, en fonction du film recherché. Utilisation de l'API de géocalisation Leaflet et l'API publique de la ville de Paris pour les lieux de tournages à Paris depuis 2016.",
         objectives:
             "Comprendre et apprendre à utiliser une API et manipuler des données. Utilisation du CSS pour rendre un site attractif. Apprendre de nouvelles fonctionnalités, comme les fonctions asynchrones en JavaScript. Attribuer des évènements à des éléments de notre HTML.",
         nbpeople: "3",
         time: "7",
         language: "HTML, CSS, JS",
+        github: "https://github.com/Fiona-Rio/Lieux_de_tournages_Paris_API",
         src: "/Dataviz.png",
     },
     {
@@ -135,10 +139,11 @@ export const Projects = [
         title: "JumpyCat",
         text: "Premier projet de programmation. Un platformer en 2D avec un chat en personnage principal et des objets collectables. Le but est de se déplacer dans la map et sur des plateformes pour récupérer tous les poissons (20).",
         objectives:
-            "Nos objectifs : appréhender un premier langage (LUA). Créer un petit jeu et prendre du plaisir dans la programmation",
+            "Appréhender un premier langage (LUA). Créer un petit jeu et prendre du plaisir dans la programmation",
         nbpeople: "3",
         time: "7",
         language: "LUA",
+        github: "https://github.com/Fiona-Rio/Jumpy-cat_Pico-8",
         src: "/game.gif",
     },
     {
@@ -150,6 +155,7 @@ export const Projects = [
         nbpeople: "1",
         time: "Work In Progress",
         language: "React, JavaScript, Tailwind",
+        github: "https://github.com/Fiona-Rio/crom_association",
         src: "/CROM.png",
     },
 ];

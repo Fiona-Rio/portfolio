@@ -22,7 +22,7 @@ function LogoWall({
     pauseOnHover = false,
     size = "clamp(8rem, 1rem + 30vmin, 25rem)",
     duration = "60s",
-    textColor = "#ffffff",
+    textColor = "#333333",
     bgColor = "#b048e0",
     bgAccentColor = "#b048e0",
 }: LogoWallProps) {
@@ -90,22 +90,24 @@ function LogoWall({
                         .join(" ")}
                 >
                     {items.map((item, idx) => (
-                        <img
-                            key={idx}
-                            src={item.Image}
-                            alt={item.name}
-                            className={[
-                                "bg-[var(--color-bg-accent)]",
-                                "rounded-md",
-                                "object-contain",
-                                "aspect-video",
-                                `w-[var(--size)] p-[calc(var(--size)/10)]`,
-                                direction === "vertical" &&
-                                    "aspect-square w-[calc(var(--size)/1.5)] p-[calc(var(--size)/6)]",
-                            ]
-                                .filter(Boolean)
-                                .join(" ")}
-                        />
+                        <div className="flex flex-col items-center" key={idx}>
+                            <img
+                                src={item.Image}
+                                alt={item.name}
+                                className={[
+                                    "bg-[var(--color-bg-accent)]",
+                                    "rounded-md",
+                                    "object-contain",
+                                    "aspect-video",
+                                    `w-[var(--size)] p-[calc(var(--size)/10)]`,
+                                    direction === "vertical" &&
+                                        "aspect-square w-[calc(var(--size)/1.5)] p-[calc(var(--size)/6)]",
+                                ]
+                                    .filter(Boolean)
+                                    .join(" ")}
+                            />
+                            <span className="mt-2 text-sm">{item.name}</span>
+                        </div>
                     ))}
                 </div>
                 <div
@@ -124,22 +126,24 @@ function LogoWall({
                         .join(" ")}
                 >
                     {items.map((item, idx) => (
-                        <img
-                            key={`dup1-${idx}`}
-                            src={item.Image}
-                            alt={item.name}
-                            className={[
-                                "bg-[var(--color-bg-accent)]",
-                                "rounded-md",
-                                "object-contain",
-                                "aspect-video",
-                                `w-[var(--size)] p-[calc(var(--size)/10)]`,
-                                direction === "vertical" &&
-                                    "aspect-square w-[calc(var(--size)/1.5)] p-[calc(var(--size)/6)]",
-                            ]
-                                .filter(Boolean)
-                                .join(" ")}
-                        />
+                        <div className="flex flex-col items-center" key={`dup1-${idx}`}>
+                            <img
+                                src={item.Image}
+                                alt={item.name}
+                                className={[
+                                    "bg-[var(--color-bg-accent)]",
+                                    "rounded-md",
+                                    "object-contain",
+                                    "aspect-video",
+                                    `w-[var(--size)] p-[calc(var(--size)/10)]`,
+                                    direction === "vertical" &&
+                                        "aspect-square w-[calc(var(--size)/1.5)] p-[calc(var(--size)/6)]",
+                                ]
+                                    .filter(Boolean)
+                                    .join(" ")}
+                            />
+                            <span className="mt-2 text-sm">{item.name}</span>
+                        </div>
                     ))}
                 </div>
             </div>
@@ -164,22 +168,24 @@ function LogoWall({
                         .join(" ")}
                 >
                     {items.map((item, idx) => (
-                        <img
-                            key={`rev-${idx}`}
-                            src={item.Image}
-                            alt={item.name}
-                            className={[
-                                "bg-[var(--color-bg-accent)]",
-                                "rounded-md",
-                                "object-contain",
-                                "aspect-video",
-                                `w-[var(--size)] p-[calc(var(--size)/10)]`,
-                                direction === "vertical" &&
-                                    "aspect-square w-[calc(var(--size)/1.5)] p-[calc(var(--size)/6)]",
-                            ]
-                                .filter(Boolean)
-                                .join(" ")}
-                        />
+                        <div className="flex flex-col items-center" key={`rev-${idx}`}>
+                            <img
+                                src={item.Image}
+                                alt={item.name}
+                                className={[
+                                    "bg-[var(--color-bg-accent)]",
+                                    "rounded-md",
+                                    "object-contain",
+                                    "aspect-video",
+                                    `w-[var(--size)] p-[calc(var(--size)/10)]`,
+                                    direction === "vertical" &&
+                                        "aspect-square w-[calc(var(--size)/1.5)] p-[calc(var(--size)/6)]",
+                                ]
+                                    .filter(Boolean)
+                                    .join(" ")}
+                            />
+                            <span className="mt-2 text-sm">{item.name}</span>
+                        </div>
                     ))}
                 </div>
                 <div
@@ -198,22 +204,24 @@ function LogoWall({
                         .join(" ")}
                 >
                     {items.map((item, idx) => (
-                        <img
-                            key={`dup2-${idx}`}
-                            src={item.Image}
-                            alt={item.name}
-                            className={[
-                                "bg-[var(--color-bg-accent)]",
-                                "rounded-md",
-                                "object-contain",
-                                "aspect-video",
-                                `w-[var(--size)] p-[calc(var(--size)/10)]`,
-                                direction === "vertical" &&
-                                    "aspect-square w-[calc(var(--size)/1.5)] p-[calc(var(--size)/6)]",
-                            ]
-                                .filter(Boolean)
-                                .join(" ")}
-                        />
+                        <div className="flex flex-col items-center" key={`dup2-${idx}`}>
+                            <img
+                                src={item.Image}
+                                alt={item.name}
+                                className={[
+                                    "bg-[var(--color-bg-accent)]",
+                                    "rounded-md",
+                                    "object-contain",
+                                    "aspect-video",
+                                    `w-[var(--size)] p-[calc(var(--size)/10)]`,
+                                    direction === "vertical" &&
+                                        "aspect-square w-[calc(var(--size)/1.5)] p-[calc(var(--size)/6)]",
+                                ]
+                                    .filter(Boolean)
+                                    .join(" ")}
+                            />
+                            <span className="mt-2 text-sm">{item.name}</span>
+                        </div>
                     ))}
                 </div>
             </div>
@@ -222,59 +230,3 @@ function LogoWall({
 }
 
 export default LogoWall;
-
-// ALSO NEEDED:
-//
-// KEYFRAME ANIMATION:
-//
-// /** @type {import('tailwindcss').Config} */
-// module.exports = {
-//   content: [
-//     "./src/**/*.{js,jsx,ts,tsx}"
-//   ],
-//   theme: {
-//     extend: {
-//       keyframes: {
-//         scrollX: {
-//           "0%": { transform: "translateX(0)" },
-//           "100%": { transform: "translateX(-100%)" }
-//         },
-//         scrollY: {
-//           "0%": { transform: "translateY(0)" },
-//           "100%": { transform: "translateY(-100%)" }
-//         }
-//       },
-//       animation: {
-//         scrollX: "scrollX var(--duration) linear infinite",
-//         scrollY: "scrollY var(--duration) linear infinite"
-//       }
-//     }
-//   },
-//   plugins: []
-// };
-//
-// LAYER UTILITY SNIPPET:
-//
-// @layer utilities {
-//   .mask-horizontal {
-//     @apply [mask-image:linear-gradient(to_right,rgba(0,0,0,0)_0%,rgba(0,0,0,1)_20%,rgba(0,0,0,1)_80%,rgba(0,0,0,0)_100%)]
-//            [mask-size:cover]
-//            [mask-repeat:no-repeat];
-//   }
-
-//   .mask-vertical {
-//     @apply [mask-image:linear-gradient(to_bottom,rgba(0,0,0,0)_0%,rgba(0,0,0,1)_20%,rgba(0,0,0,1)_80%,rgba(0,0,0,0)_100%)]
-//            [mask-size:cover]
-//            [mask-repeat:no-repeat];
-//   }
-
-//   .paused .animate-scrollX,
-//   .paused .animate-scrollY {
-//     animation-play-state: paused !important;
-//   }
-
-//   .reverse-x {
-//     animation-direction: reverse;
-//     animation-delay: -3s;
-//   }
-// }

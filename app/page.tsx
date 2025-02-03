@@ -67,11 +67,11 @@ export default function Home() {
                     <img src="./Room.png" className="h-[300px] w-[300px] lg:h-[600px] lg:w-[600px]" />
                 </div>
 
-                <div id="Outils" className="lg:pb-72 lg:mt-64 lg:pt-40 mt-40">
-                    <h2 className="flex justify-center text-center text-5xl lg:text-7xl text-zinc-700 font-semibold mb-40 px-10">
+                <div id="Outils" className="lg:pb-72 lg:mt-64 lg:pt-40 pt-40 mb-20">
+                    <h2 className="flex justify-center text-center text-4xl lg:text-7xl text-zinc-700 font-semibold mb-28 px-10">
                         Mes langages et outils
                     </h2>
-                    <div style={{ height: "600px", width: "100%", position: "relative" }}>
+                    <div className="relative w-full">
                         <LogoWall
                             items={SkillData}
                             direction="horizontal"
@@ -85,7 +85,7 @@ export default function Home() {
                 </div>
 
                 <div id="mesprojets" className="pb-72 pt-40">
-                    <h2 className="flex justify-center text-5xl lg:text-7xl text-zinc-700 font-semibold mb-40 px-10">
+                    <h2 className="flex justify-center text-4xl lg:text-7xl text-zinc-700 font-semibold mb-40 px-10">
                         Mes projets de formation
                     </h2>
                     <List />
