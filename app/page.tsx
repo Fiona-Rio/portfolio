@@ -25,15 +25,15 @@ export default function Home() {
                     <div className="flex text-zinc-700">
                         <div
                             id="title"
-                            className="lg:px-5 lg:pt-32 lg:pl-56 lg:pb-32 md:pl-40 pt-20 pb-2 px-14 flex flex-col gap-7"
+                            className="lg:px-5 lg:pt-32 lg:pl-56 lg:pb-32 pt-20 pb-2 px-14 flex flex-col gap-7 lg:min-w-[700px]"
                         >
-                            <h1 className="lg:text-9xl md:text-7xl lg:text-start text-5xl font-bold text-center">
+                            <h1 className="lg:text-8xl md:text-7xl lg:text-start text-5xl font-bold text-center">
                                 Fiona RIO
                             </h1>
                             <h1 className="lg:text-6xl lg:text-start md:text-7xl text-4xl font-bold text-center">
                                 Developpeuse web
                             </h1>
-                            <p className="lg:text-3xl lg:text-start text-md text-center">
+                            <p className="lg:text-2xl lg:text-start text-md text-center">
                                 Bienvenue ! Je viens de terminer une formation de developpeuse web de 8 mois a Ada Tech
                                 School et je recherche activement une alternance d&apos;un an a partir de mars 2025 sur
                                 Nantes de preference ou en remote sur toute la France ! 👾
@@ -64,10 +64,11 @@ export default function Home() {
                             </div>
                         </div>
                     </div>
-                    <img src="./Room.png" className="h-[300px] w-[300px] lg:h-[600px] lg:w-[600px]" />
+
+                    <img src="./Room.png" className="w-1/2 lg:w-4/6 h-auto object-contain mx-auto lg:mx-0" />
                 </div>
 
-                <div id="Outils" className="lg:pb-72 lg:mt-64 lg:pt-40 pt-40 mb-20">
+                <div id="Outils" className="lg:pb-72 lg:mt-64 lg:pt-40 md:pt-32 md:mt-52 pt-40 mb-20">
                     <h2 className="flex justify-center text-center text-4xl lg:text-7xl text-zinc-700 font-semibold mb-28 px-10">
                         Mes langages et outils
                     </h2>
@@ -85,7 +86,7 @@ export default function Home() {
                 </div>
 
                 <div id="mesprojets" className="pb-72 pt-40">
-                    <h2 className="flex justify-center text-4xl lg:text-7xl text-zinc-700 font-semibold mb-40 px-10">
+                    <h2 className="flex justify-center text-4xl lg:text-7xl text-zinc-700 font-semibold mb:mb-40 mb-20 px-10">
                         Mes projets de formation
                     </h2>
                     <List />

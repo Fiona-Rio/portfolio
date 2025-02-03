@@ -34,13 +34,13 @@ const ProjectModal: React.FC<{
             onClick={onClose}
         >
             <motion.div
-                className="text-fuchsia-200 bg-fuchsia-950 backdrop-blur bg-opacity-75 rounded-2xl lg:relative lg:w-1/2 md:w-3/4 w-3/4 h-6/7 lg:h-5/6"
+                className="text-fuchsia-200 bg-fuchsia-950 backdrop-blur bg-opacity-75 rounded-2xl lg:relative lg:w-1/2 lg:h-5/6 md:w-5/6 md:h-3/4 w-3/4 h-6/7"
                 layoutId={`card-container-${id}`}
                 onClick={(e) => e.stopPropagation()}
             >
                 <motion.div
                     layoutId={`card-image-${id}`}
-                    className="relative lg:h-[300px] h-[150px] rounded-t-2xl overflow-hidden"
+                    className="relative lg:h-1/3 md:h-1/2 h-1/4 rounded-t-2xl overflow-hidden"
                 >
                     <motion.img src={src} alt={title} className="w-full h-full object-cover" />
                 </motion.div>
@@ -79,7 +79,7 @@ export const List: React.FC = () => {
 
     return (
         <div className="flex justify-center">
-            <ul className="grid lg:grid-cols-2 gap-8 grid-cols-1 max-w-7xl px-4">
+            <ul className="grid lg:grid-cols-2 gap-8 grid-cols-1 md:px-20 px-10">
                 {Projects.map((project) => (
                     <li key={project.id}>
                         <SpotlightCard
