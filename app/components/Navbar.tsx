@@ -24,7 +24,7 @@ const Navbar = () => {
                     </a>
                 </li>
                 <li>
-                    <a href="/CV - Fiona RIO .pdf" target="_blank" className="flex items-center lg:flex-col">
+                    <a href="/CV - Fiona RIO (sansnum).pdf" target="_blank" className="flex items-center lg:flex-col">
                         <BsFileEarmarkPdfFill className="lg:rotate-90" />
                         <p className="lg:rotate-90 pl-2">CV</p>
                     </a>
